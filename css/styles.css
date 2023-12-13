@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #section2 {
@@ -61,7 +62,7 @@ button:hover {
 }
 
 .movingButton {
-  position: relative;
+  position: absolute;
 }
 
 .avatar {

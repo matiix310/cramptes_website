@@ -2,8 +2,14 @@ let isRunningAway = true;
 
 function runAway(id) {
     if (isRunningAway) {
-        id.style.top = (Math.round(Math.random() * 300) - 150) * 2 + 'px';
-        id.style.left = (Math.round(Math.random() * 300) - 300) * 2 + 'px';
+        const oldTop = id.style.top;
+        const oldLeft = id.style.left;
+
+        id.style.top = (Math.round(Math.random() * (window.innerHeight - id.clientHeight))) + 'px';
+        id.style.left = (Math.round(Math.random() * (window.innerWidth - id.clientWidth))) + 'px';
+
+        if (Math.abs(oldTop - id.style.top) < 100 || Math.abs(oldLeft - id.style.left) < 100)
+            runAway(id);
     }
 }
 
